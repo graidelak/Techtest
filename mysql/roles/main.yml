@@ -1,0 +1,8 @@
+- name: Install Mysql package
+  apt: name=mysql-server state=installed
+
+- name: Start Mysql Service
+  service: name=mysqld state=started enabled=yes
+
+- name: Create User
+mysql_user: name={{ dbuser }} password={{ upassword }} priv=*.*:ALL host='%' state=present

@@ -1,0 +1,23 @@
+# Default server configuration
+
+server {
+  listen {{ http_port }} default_server;
+  listen [::]:{{ http_port }} default_server;
+
+  root {{ base_dir }};
+  index index.html index.htm index.php;
+  server_name _;
+
+  location / {
+    try_files $uri $uri/ =404;
+  }
+
+  location ~ \.php$ {
+    include snippets/fastcgi-php.conf;
+    fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+  }
+
+  location ~ /\.ht {
+    deny all;
+  }
+}

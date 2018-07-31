@@ -1,0 +1,6 @@
+- name: install lemp
+  hosts: all
+  sudo: true
+  gather_facts: True
+  roles:
+    - lemp

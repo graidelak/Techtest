@@ -1,5 +1,0 @@
-- name: install lemp
-hosts: all
-roles:
-    - mysql
-    - nginx

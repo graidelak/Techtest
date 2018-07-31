@@ -1,0 +1,16 @@
+---
+-
+  name: "Start Mysql Service"
+  service: name=mysql state=started enabled=yes    
+-
+  name: restart mysql
+  service: name=mysql state=restarted
+-
+  name: "start nginx"
+  service: name=nginx enabled=yes state=started
+-
+  name: "reload nginx"
+  service: name=nginx state=reloaded
+-
+  name: "start php-fpm"
+  service: name=php7.0-fpm enabled=yes state=started

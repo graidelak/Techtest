@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "vagrant", "/vagrant", :mount_options => ["rw"]
 
   dev.vm.provision "ansible_local" do |ansible|
-    ansible.provisioning_path = "/vagrant/Testtech/"
+    ansible.provisioning_path = "/vagrant/Techtest/"
 	ansible.inventory_path = "hosts.ini"
     ansible.verbose = "v"
     ansible.playbook = "playbook.yml"
@@ -39,7 +39,7 @@ Vagrant.configure("2") do |config|
    testing.vm.hostname = "dev"
    testing.vm.network "private_network", ip: "10.0.0.11"
     testing.vm.provision "ansible_local" do |ansible|
-    ansible.provisioning_path = "/vagrant/Testtech/"
+    ansible.provisioning_path = "/vagrant/Techtest/"
 	ansible.inventory_path = "hosts.ini"
     ansible.verbose = "v"
     ansible.playbook = "playbook.yml"

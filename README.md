@@ -7,7 +7,7 @@ First of all you need to install:
 Virtualbox https://www.virtualbox.org/wiki/Downloads
 Vagrant https://releases.hashicorp.com/vagrant/2.1.2/vagrant_2.1.2_x86_64.deb
 
-After create the project where you will run your vagrant boxes
+After create the project where you will run your vagrant boxes (dev and testing).
 
 mkdir vagrant_testtech
 
@@ -26,7 +26,7 @@ Now we are going to clone or download the repository of github inside the folder
 
 git clone https://github.com/graidelak/Techtest.git
 
-Now replace the Vagranfile of your proyect for the one of the repository that has the configuration for the local boxes.
+Now replace the Vagranfile of your proyect for the one of the repository that has the configuration for the local boxes (dev and testing).
 
 After replace the Vagrantfile we are now ready to start our vagrant boxes , go to you proyect's folder and type:
 

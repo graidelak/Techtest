@@ -5,6 +5,7 @@
 First of all you need to install:
 
 Virtualbox https://www.virtualbox.org/wiki/Downloads
+
 Vagrant https://releases.hashicorp.com/vagrant/2.1.2/vagrant_2.1.2_x86_64.deb
 
 After create the project where you will run your vagrant boxes.
@@ -27,6 +28,7 @@ $ git clone https://github.com/graidelak/Techtest.git
 You can replace the ips of the boxes in the Vagrantfile for whatever you want, right now the ips are:
 
 10.0.0.10 dev
+
 10.0.0.11 testing
 
 Now replace the Vagranfile of your project for the one of the repository that has the configuration for the local boxes.

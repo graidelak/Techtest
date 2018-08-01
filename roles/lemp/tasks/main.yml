@@ -1,0 +1,40 @@
+---
+-
+  name: update apt repo
+  apt: update-cache=yes cache_valid_time=3600
+-
+  name: "Install LEMP"
+  apt: name={{ item }} state=present
+  with_items:
+    - mysql-server
+    - python-mysqldb
+    - mysql-client
+    - nginx
+    - php7.0-fpm
+    - php-mysql
+
+-
+  name: "Start Mysql Service"
+  service: name=mysql state=started enabled=yes
+  notify:
+    - start mysql
+-
+  name: "Create User"
+  mysql_user: user=test host=% password=12345 priv=*.*:ALL,GRANT state=present
+  notify:
+    - restart mysql
+
+- name: "start nginx"
+  service: name=nginx enabled=yes state=started
+  notify:
+    - start nginx
+
+- name: "start php-fpm"
+  service: name=php7.0-fpm enabled=yes state=started
+  notify:
+    -start php7.0-fpm
+
+- name: Set up the nginx default site configuration file
+  template: src=default dest=/etc/nginx/sites-available/default
+  notify:
+    - reload nginx

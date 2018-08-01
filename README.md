@@ -9,7 +9,7 @@ Vagrant https://releases.hashicorp.com/vagrant/2.1.2/vagrant_2.1.2_x86_64.deb
 
 After create the project where you will run your vagrant boxes (dev and testing).
 
-mkdir vagrant_testtech
+mkdir proyectfolder
 
 Then run in the terminal or cmd
 

@@ -5,10 +5,6 @@
 -
   name: "Install LEMP"
   apt: name={{ item }} state=present
-  notify:
-    - start mysql
-    - start nginx
-    - start php7.0-fpm
   with_items:
     - mysql-server
     - python-mysqldb
@@ -20,15 +16,23 @@
 -
   name: "Start Mysql Service"
   service: name=mysql state=started enabled=yes
+  notify:
+    - start mysql
 -
   name: "Create User"
   mysql_user: user=test host=% password=12345 priv=*.*:ALL,GRANT state=present
+  notify:
+    - restart mysql
 
 - name: "start nginx"
   service: name=nginx enabled=yes state=started
+  notify:
+    - start nginx
 
 - name: "start php-fpm"
   service: name=php7.0-fpm enabled=yes state=started
+  notify:
+    -start php7.0-fpm
 
 - name: Set up the nginx default site configuration file
   template: src=default dest=/etc/nginx/sites-available/default

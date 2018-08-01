@@ -24,6 +24,11 @@ Now we are going to clone or download the repository of github inside the folder
 
 $ git clone https://github.com/graidelak/Techtest.git
 
+You can replace the ips of the boxes in the Vagrantfile for whatever you want, right now the ips are:
+
+10.0.0.10 dev
+10.0.0.11 testing
+
 Now replace the Vagranfile of your project for the one of the repository that has the configuration for the local boxes.
 
 After replace the Vagrantfile we are now ready to start our vagrant boxes , go to you project's folder and type:
@@ -32,4 +37,4 @@ vagrant up
 
 This will start to create the boxes with ansible as a provisioned of the configuration.
 
-and that's it!.
+and that's it!, you can check if the nginx is running going to your browser and put 10.0.0.10 or 10.0.0.11

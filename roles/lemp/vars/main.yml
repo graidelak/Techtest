@@ -1,2 +1,2 @@
 http_port:              80
-base_dir:               '/var/www/'
+base_dir:               '/var/www/html'

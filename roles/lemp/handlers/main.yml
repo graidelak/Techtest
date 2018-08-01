@@ -1,9 +1,9 @@
 ---
 -
   name: "Start Mysql Service"
-  service: name=mysql state=started enabled=yes    
+  service: name=mysql state=started enabled=yes
 -
-  name: restart mysql
+  name: "restart mysql"
   service: name=mysql state=restarted
 -
   name: "start nginx"

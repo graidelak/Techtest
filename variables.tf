@@ -23,22 +23,11 @@ description = "Ubuntu xenial 16.04"
 default = "ami-759bc50a"
 }
 
-
 variable "aws_access_key" {
-  default = "AKIAJ2KCALARJ27YK3JA"
+  default = ""
   description = "the user aws access key"
 }
 variable "aws_secret_key" {
-  default = "rLDgAxRRO9utZ50ZZB1NRz6pDUvkYAYyu/74I5Eu"
+  default = ""
   description = "the user aws secret key"
 }
-variable "ssh_key_public" {
-  default     = "~/.ssh/id_rsa.pub"
-  description = "Path to the SSH public key for accessing cloud instances. Used for creating AWS keypair."
-}
-
-variable "ssh_key_private" {
-  default     = "~/.ssh/id_rsa"
-  description = "Path to the SSH public key for accessing cloud instances. Used for creating AWS keypair."
-}
-
